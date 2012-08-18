@@ -84,5 +84,5 @@ void testgroup (unsigned int count_bits(unsigned int))
 }
 
 void ok (int test) {
-    printf(test ? "ok %dn" : "NOT ok %dn", ++test_count);
+    printf(test ? "ok %d\n" : "NOT ok %d\n", ++test_count);
 }
