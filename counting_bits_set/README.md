@@ -12,15 +12,15 @@ Much credit is due to this page of [bit twiddling hacks][1].
 
 The naïve solution is to shift the input by one bit and check the last bit 32 times:
 
-<pre class="prettyprint lang-c"><code>unsigned int count_bits_naive1 (unsigned int num)
-{
-    int count = 0;
-    for (int i=0; i&lt;32; i++) {
-        count += (num >> i) & 1;
+    unsigned int count_bits_naive1 (unsigned int num)
+    {
+        int count = 0;
+        for (int i=0; i&lt;32; i++) {
+            count += (num >> i) & 1;
+        }
+        return count;
     }
-    return count;
-}
-</code></pre>
+
 
 This version adds the optimization so that it stops once the leftmost set bit is reached. No need to continue counting if num == 0:
 
